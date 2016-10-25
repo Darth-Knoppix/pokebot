@@ -1,7 +1,7 @@
 #PS3 MDDN 342 2016
 
 -----
-###Idea
+### Idea
 -----
 
 My idea is to use the pokemon data from corpora (https://github.com/dariusk/corpora/blob/master/data/games/pokemon.json).
@@ -30,4 +30,19 @@ based on the number of #pokemon_name, found on twitter however the API is not po
 By adding weather data, It allows for greater variation however I would have liked to add more
 relevant data through twitter or a more user interactable medium.
 
-### Intial Commit
+### Refinement
+To refine my bot I wanted to add some more interactivity. To do this I rewrote my code in python
+so I could reduce the distance betwee getting information from twitter and drawing the sketch.
+
+This allowed me to have some more direct interaction between twitter itself and my pokemon battle.
+The bot will run to aschedule and pick a random battle. The scene will be dertermined as before by 
+weather data and will gather the information for the Pokemon form various internet sources.
+It will assk 'Who won?" promting the user for some input, this will take the form of a tweet with the hashtag
+of one of the pokemon, the more tweets with that particular hashtag will win the battle. The bot will
+retrieve the tweets from the last day to sum.
+
+A challenge was getting the correct data form Twitter and figuring out a way to use it effectively.
+ 
+
+
+The bot is online at https://twitter.com/poke_battle_bot
