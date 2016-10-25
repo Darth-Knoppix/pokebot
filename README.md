@@ -45,4 +45,4 @@ A challenge was getting the correct data form Twitter and figuring out a way to 
  
 
 
-The bot is online at https://twitter.com/poke_battle_bot
+The bot is online at[@poke_battle_bot](https://twitter.com/poke_battle_bot)
