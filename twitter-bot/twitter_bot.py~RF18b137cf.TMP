@@ -1,0 +1,45 @@
+import tweepy
+from bot import *
+from tweepy import api
+
+CONSUMER_KEY    = '4TkVVedn4ANWgGOlo3dzXyMC8'
+CONSUMER_SECRET = 'uTWB4RKNLJxmlOUVFbdRXUG7yUqXgbKE5wFKp1lj3nPnLxv7UY'
+ACCESS_KEY      = '788936561706405890-hMIv7ZqJZlYICwsQ6k02wO9FKmxtLIc'
+ACCESS_SECRET   = 'YEmsLDqKw3Yjy4u2WnWnQFqvpmbECsPPTWdkNC02F6WK7'
+
+
+
+### Send final tweet
+def tweet(message = ""):
+    #api.update_status("Images are incoming...")
+    api.update_with_media('scene.png', message)
+
+### Collect tweets based on hashtag
+def collectTweets(tag = 'balbasaur'):
+    return tweepy.Cursor(api.search, q=('#' + tag), lang='en').items()
+
+### Print collection of tweets
+def printTweets(tweets):
+    for tweet in tweets:
+        print(tweet.text.encode('ascii', 'ignore'))
+
+### Setup the battle image
+def composeTweet():
+    bot = Bot()
+    bot.preload()
+    return bot.setup()
+
+### Setup Tweepy with credientials
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
+api = tweepy.API(auth)
+tweet(composeTweet())
+
+
+#printTweets(collectTweets())
+
+
+
+#public_tweets = api.home_timeline()
+#for tweet in public_tweets:
+#    print(tweet.text)
